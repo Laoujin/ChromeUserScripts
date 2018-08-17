@@ -12,6 +12,9 @@ chrome://extensions/
 
 Need to click the refresh button there for any change to have effect!
 
+Now it's vanilla JS and jQuery scripts but could switch to
+[Chrome Content Scripts](https://developer.chrome.com/extensions/content_scripts)
+
 
 
 Chrome stores the extensions here:  
@@ -32,6 +35,3 @@ Mac OS X:
 
 See [Stackoverflow: Manually adding a Userscript to Google Chrome](https://stackoverflow.com/questions/5258989/manually-adding-a-userscript-to-google-chrome/5259212)
 for more information.
-
-
-Slack Steven zijn Bullhorn ding?

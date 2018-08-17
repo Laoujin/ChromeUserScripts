@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name
 // @namespace    https://itenium.be/
-// @author       Wouter Van Schandeijl
+// @author       Wouter Van Schandevijl
 // @match        https://
 // @grant        none
 // ==/UserScript==

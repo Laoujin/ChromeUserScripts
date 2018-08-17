@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IMDB: Focus searchbox
 // @namespace    https://itenium.be/
-// @author       Wouter Van Schandeijl
+// @author       Wouter Van Schandevijl
 // @match        https://www.imdb.com/
 // @grant        none
 // ==/UserScript==
