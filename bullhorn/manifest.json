@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "content_scripts": [{
+        "exclude_globs":    [],
+        "include_globs":    ["*"],
+        "js":               ["bullhorn.user.js"],
+        "matches":          ["https://app.bullhornstaffing.com/*"],
+        "run_at": "document_end"
+    }],
+    "converted_from_user_script": true,
+    "description":  "Set all autocomplete fields off",
+    "name":         "Bullhorn",
+    "version":      "1"
+}
