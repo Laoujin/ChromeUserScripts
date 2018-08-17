@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "content_scripts": [{
+        "exclude_globs":    [],
+        "include_globs":    ["*"],
+        "js":               ["stackexchange.user.js"],
+        "matches":          ["https://stackoverflow.com/*", "https://*.stackexchange.com/*"],
+        "run_at": "document_end"
+    }],
+    "converted_from_user_script": true,
+    "description":  "Hide Hot Network Questions",
+    "name":         "StackOverflow / StackExchange: hide distracting elements",
+    "version":      "1"
+}
