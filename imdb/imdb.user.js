@@ -6,6 +6,8 @@
 // @grant        none
 // ==/UserScript==
 
+/* eslint no-console: 0 */
+
 (function() {
   var searchBox = document.getElementById('navbar-query');
 
