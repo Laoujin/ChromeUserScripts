@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         IMDB: Piratebay link
-// @namespace    https://itenium.be/
 // @author       Wouter Van Schandevijl
 // @match        https://www.imdb.com/
 // @grant        none
