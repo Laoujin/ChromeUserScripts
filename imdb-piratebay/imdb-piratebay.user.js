@@ -10,7 +10,6 @@
 var load,execute,loadAndExecute;load=function(a,b,c){var d;d=document.createElement("script"),d.setAttribute("src",a),b!=null&&d.addEventListener("load",b),c!=null&&d.addEventListener("error",c),document.body.appendChild(d);return d},execute=function(a){var b,c;typeof a=="function"?b="("+a+")();":b=a,c=document.createElement("script"),c.textContent=b,document.body.appendChild(c);return c},loadAndExecute=function(a,b){return load(a,function(){return execute(b)})};
 var $;
 
-
 loadAndExecute('https://code.jquery.com/jquery-latest.js', function() {
   const pirateUrl = 'https://pirateproxy.gdn/search/{searchTerm}/0/99/0';
 
@@ -24,8 +23,7 @@ loadAndExecute('https://code.jquery.com/jquery-latest.js', function() {
     }
 
     const fullTitle = title.text().trim();
-    const movieTitle = fullTitle.substring(0, fullTitle.length - 7);
-    console.log('MovieTitle', movieTitle);
+    const movieTitle = fullTitle.indexOf('(') !== -1 ? fullTitle.substring(0, fullTitle.length - 7) : fullTitle;
     return movieTitle;
   }
 
@@ -50,7 +48,7 @@ loadAndExecute('https://code.jquery.com/jquery-latest.js', function() {
 
   const widget = addDownloadButton();
   $('#piratebay-download', widget.parent()).on('click', function() {
-    const movieTitle = getMovieTitle().replace(/[^0-9a-zA-Z]+/, '');
+    const movieTitle = getMovieTitle().replace(/[^0-9a-zA-Z ]+/, '');
     const searchTerm = encodeURI(movieTitle);
     const url = pirateUrl.replace('{searchTerm}', searchTerm);
 
