@@ -8,7 +8,7 @@
         "run_at": "document_end"
     }],
     "converted_from_user_script": true,
-    "description":  "Set all autocomplete fields off",
+    "description":  "Turn Chrome autocomplete off for all fields",
     "name":         "Bullhorn",
     "version":      "1"
 }
