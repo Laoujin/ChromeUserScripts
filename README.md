@@ -5,17 +5,21 @@ Chrome UserScripts
 stores the scripts in a Sqlite database. Not very source-controlly. Hence this repository.
 
 
+## Install them
+
 Turn on "Developer mode" and use `Load unpacked`:  
 ```
 chrome://extensions/
 ```
 
-Need to click the refresh button there for any change to have effect!
+## Development
 
-Now it's vanilla JS and jQuery scripts but could switch to
+Need to click the refresh button in `chrome://extensions` for any change to have effect!
+
+All scripts are vanilla JS and jQuery scripts but could switch to
 [Chrome Content Scripts](https://developer.chrome.com/extensions/content_scripts)
 
-
+## UserScript info
 
 Chrome stores the extensions here:  
 (Changes made here are ignored/overwritten)  
