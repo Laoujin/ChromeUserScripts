@@ -4,7 +4,13 @@
         "exclude_globs":    [],
         "include_globs":    ["*"],
         "js":               ["stackexchange.user.js"],
-        "matches":          ["https://stackoverflow.com/*", "https://*.stackexchange.com/*"],
+        "matches":          [
+        	                    "https://superuser.com/*",
+        	                    "https://askubuntu.com/*",
+        	                    "https://serverfault.com/*",
+                             "https://stackoverflow.com/*",
+                             "https://*.stackexchange.com/*"
+                            ],
         "run_at": "document_end"
     }],
     "converted_from_user_script": true,
