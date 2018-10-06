@@ -12,6 +12,28 @@ Turn on "Developer mode" and use `Load unpacked`:
 chrome://extensions/
 ```
 
+## Suppress Startup Warning
+
+**Option 1**: Switch to Chrome Canary
+
+
+**Option 2**: [Download policy templates](https://support.google.com/chrome/a/answer/187202?hl=en)  
+
+- Put `policy_templates\windows\admx\chrome.admx` in `c:\windows\policydefinitions`
+- Put `policy_templates\windows\admx\[yourlanguage]\chrome.adml` in `c:\windows\policydefinitions\[yourlanguage]\chrome.adml`
+- Start `gpedit.msc`
+- Go to User Configuration > Administrative Templates > Administrative Templates > Google Chrome > Extensions
+- Open "Configure extension installation whitelist"
+- Enable the policy
+- Click the "Show..." button
+
+Browse to `chrome://extensions` and add the ids of your UserScripts to the whitelist.
+The ID is in the url when opening the extension details.
+
+
+[Blog post with more information](https://www.ghacks.net/2017/07/04/hide-chromes-disable-developer-mode-extensions-warning/)
+
+
 ## Development
 
 Need to click the refresh button in `chrome://extensions` for any change to have effect!
