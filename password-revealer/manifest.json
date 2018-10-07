@@ -4,7 +4,7 @@
         "exclude_globs":    [],
         "include_globs":    ["*"],
         "js":               ["password-revealer.user.js"],
-        "matches":          ["*://*/*", "file:///*"],
+        "matches":          ["http://*/*", "file:///*", "https://*/*"],
         "run_at": "document_end"
     }],
     "converted_from_user_script": true,
