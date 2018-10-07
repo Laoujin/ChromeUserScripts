@@ -52,7 +52,7 @@ function enhancePasswordInputs() {
         $(this)
           .attr('data-pwd-reveal-index', count)
           .after(`
-            <button class="show-pwd-button" data-pwd-reveal-index="${count}" data-toggle="hide">
+            <button type="button" class="show-pwd-button" data-pwd-reveal-index="${count}" data-toggle="hide">
               <img width="${inputHeight}" src="${config.imgSrc}" title="${config.title}">
             </button>`);
       });
