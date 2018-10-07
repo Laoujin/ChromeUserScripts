@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "content_scripts": [{
+        "exclude_globs":    [],
+        "include_globs":    ["*"],
+        "js":               ["password-revealer.user.js"],
+        "matches":          ["*://*/*", "file:///*"],
+        "run_at": "document_end"
+    }],
+    "converted_from_user_script": true,
+    "description":  "Show password entered in password inputs",
+    "name":         "Password Revealer",
+    "version":      "1"
+}
