@@ -22,7 +22,7 @@ chrome://extensions/
 - Put `policy_templates\windows\admx\chrome.admx` in `c:\windows\policydefinitions`
 - Put `policy_templates\windows\admx\[yourlanguage]\chrome.adml` in `c:\windows\policydefinitions\[yourlanguage]\chrome.adml`
 - Start `gpedit.msc`
-- Go to User Configuration > Administrative Templates > Administrative Templates > Google Chrome > Extensions
+- Go to User Configuration > Administrative Templates > Google Chrome > Extensions
 - Open "Configure extension installation whitelist"
 - Enable the policy
 - Click the "Show..." button
