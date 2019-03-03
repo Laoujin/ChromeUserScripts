@@ -11,7 +11,7 @@ var load,execute,loadAndExecute;load=function(a,b,c){var d;d=document.createElem
 var $;
 
 loadAndExecute('https://code.jquery.com/jquery-latest.js', function() {
-  const pirateUrl = 'https://pirateproxy.gdn/search/{searchTerm}/0/99/0';
+  const pirateUrl = 'https://pirateproxy.bet/search/{searchTerm}/0/99/0';
 
   function getMovieTitle() {
     const title = $('h1');
