@@ -1,14 +1,18 @@
 {
-    "manifest_version": 2,
-    "content_scripts": [{
-        "exclude_globs":    [],
-        "include_globs":    ["*"],
-        "js":               ["template.user.js"],
-        "matches":          ["https://www.template.com/*"],
-        "run_at": "document_end"
-    }],
-    "converted_from_user_script": true,
-    "description":  "",
-    "name":         "",
-    "version":      "1"
+	"manifest_version": 2,
+	"content_scripts": [{
+		"exclude_globs": [],
+		"include_globs": ["*"],
+		"js": ["template.user.js"],
+		"matches": ["http://*/*", "https://*/*", "file:///*"],
+		"run_at": "document_end"
+	}],
+	"converted_from_user_script": true,
+	"description": "",
+	"name": "",
+	"short_name": "",
+	"version": "1",
+	"icons": {
+		"128": "favicon.png"
+	}
 }
