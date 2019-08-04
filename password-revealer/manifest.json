@@ -10,5 +10,8 @@
     "converted_from_user_script": true,
     "description":  "Show password entered in password inputs",
     "name":         "Password Revealer",
-    "version":      "1"
+    "version":      "1",
+    "icons": {
+        "128": "favicon.png"
+    }
 }
