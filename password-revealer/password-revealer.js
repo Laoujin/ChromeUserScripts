@@ -1,21 +1,4 @@
-// ==UserScript==
-// @name
-// @namespace    https://itenium.be/
-// @author       Wouter Van Schandevijl
-// @match        *
-// @grant        none
-// ==/UserScript==
-
-var activated = false;
-document.addEventListener('keydown', function(zEvent) {
-  if (!activated && zEvent.ctrlKey && zEvent.altKey && zEvent.code === 'KeyP') {
-    activated = true;
-    enhancePasswordInputs();
-  }
-});
-
-
-function enhancePasswordInputs() {
+(function() {
   // eslint-disable-next-line
   const eyeBase64 = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjUxMS42MjZweCIgaGVpZ2h0PSI1MTEuNjI2cHgiIHZpZXdCb3g9IjAgMCA1MTEuNjI2IDUxMS42MjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMS42MjYgNTExLjYyNjsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBhdGggZD0iTTUwNS45MTgsMjM2LjExN2MtMjYuNjUxLTQzLjU4Ny02Mi40ODUtNzguNjA5LTEwNy40OTctMTA1LjA2NWMtNDUuMDE1LTI2LjQ1Ny05Mi41NDktMzkuNjg3LTE0Mi42MDgtMzkuNjg3DQoJCWMtNTAuMDU5LDAtOTcuNTk1LDEzLjIyNS0xNDIuNjEsMzkuNjg3QzY4LjE4NywxNTcuNTA4LDMyLjM1NSwxOTIuNTMsNS43MDgsMjM2LjExN0MxLjkwMywyNDIuNzc4LDAsMjQ5LjM0NSwwLDI1NS44MTgNCgkJYzAsNi40NzMsMS45MDMsMTMuMDQsNS43MDgsMTkuNjk5YzI2LjY0Nyw0My41ODksNjIuNDc5LDc4LjYxNCwxMDcuNDk1LDEwNS4wNjRjNDUuMDE1LDI2LjQ2LDkyLjU1MSwzOS42OCwxNDIuNjEsMzkuNjgNCgkJYzUwLjA2LDAsOTcuNTk0LTEzLjE3NiwxNDIuNjA4LTM5LjUzNmM0NS4wMTItMjYuMzYxLDgwLjg1Mi02MS40MzIsMTA3LjQ5Ny0xMDUuMjA4YzMuODA2LTYuNjU5LDUuNzA4LTEzLjIyMyw1LjcwOC0xOS42OTkNCgkJQzUxMS42MjYsMjQ5LjM0NSw1MDkuNzI0LDI0Mi43NzgsNTA1LjkxOCwyMzYuMTE3eiBNMTk0LjU2OCwxNTguMDNjMTcuMDM0LTE3LjAzNCwzNy40NDctMjUuNTU0LDYxLjI0Mi0yNS41NTQNCgkJYzMuODA1LDAsNy4wNDMsMS4zMzYsOS43MDksMy45OTljMi42NjIsMi42NjQsNCw1LjkwMSw0LDkuNzA3YzAsMy44MDktMS4zMzgsNy4wNDQtMy45OTQsOS43MDQNCgkJYy0yLjY2MiwyLjY2Ny01LjkwMiwzLjk5OS05LjcwOCwzLjk5OWMtMTYuMzY4LDAtMzAuMzYyLDUuODA4LTQxLjk3MSwxNy40MTZjLTExLjYxMywxMS42MTUtMTcuNDE2LDI1LjYwMy0xNy40MTYsNDEuOTcxDQoJCWMwLDMuODExLTEuMzM2LDcuMDQ0LTMuOTk5LDkuNzFjLTIuNjY3LDIuNjY4LTUuOTAxLDMuOTk5LTkuNzA3LDMuOTk5Yy0zLjgwOSwwLTcuMDQ0LTEuMzM0LTkuNzEtMy45OTkNCgkJYy0yLjY2Ny0yLjY2Ni0zLjk5OS01LjkwMy0zLjk5OS05LjcxQzE2OS4wMTUsMTk1LjQ4MiwxNzcuNTM1LDE3NS4wNjUsMTk0LjU2OCwxNTguMDN6IE0zNzkuODY3LDM0OS4wNA0KCQljLTM4LjE2NCwyMy4xMi03OS41MTQsMzQuNjg3LTEyNC4wNTQsMzQuNjg3Yy00NC41MzksMC04NS44ODktMTEuNTYtMTI0LjA1MS0zNC42ODdzLTY5LjkwMS01NC4yLTk1LjIxNS05My4yMjINCgkJYzI4LjkzMS00NC45MjEsNjUuMTktNzguNTE4LDEwOC43NzctMTAwLjc4M2MtMTEuNjEsMTkuNzkyLTE3LjQxNyw0MS4yMDctMTcuNDE3LDY0LjIzNmMwLDM1LjIxNiwxMi41MTcsNjUuMzI5LDM3LjU0NCw5MC4zNjINCgkJczU1LjE1MSwzNy41NDQsOTAuMzYyLDM3LjU0NGMzNS4yMTQsMCw2NS4zMjktMTIuNTE4LDkwLjM2Mi0zNy41NDRzMzcuNTQ1LTU1LjE0NiwzNy41NDUtOTAuMzYyDQoJCWMwLTIzLjAyOS01LjgwOC00NC40NDctMTcuNDE5LTY0LjIzNmM0My41ODUsMjIuMjY1LDc5Ljg0Niw1NS44NjUsMTA4Ljc3NiwxMDAuNzgzQzQ0OS43NjcsMjk0Ljg0LDQxOC4wMzEsMzI1LjkxMywzNzkuODY3LDM0OS4wNA0KCQl6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==';
   // eslint-disable-next-line
@@ -36,14 +19,13 @@ function enhancePasswordInputs() {
 
   const passwordInputs = document.querySelectorAll("input[type=password]");
   passwordInputs.forEach(function(input) {
-
     const inputHeight = input.offsetHeight;
     const config = buttonConfig.show;
 
     input.insertAdjacentHTML('afterend', `
-        <button type="button" class="show-pwd-button" data-toggle="hide">
-          <img height="${inputHeight}" src="${config.imgSrc}" title="${config.title}">
-        </button>`);
+      <button type="button" class="show-pwd-button" data-toggle="hide">
+        <img height="${inputHeight}" src="${config.imgSrc}" title="${config.title}">
+      </button>`);
   });
 
   const buttons = document.querySelectorAll('.show-pwd-button');
@@ -64,4 +46,4 @@ function enhancePasswordInputs() {
 
     button.setAttribute('data-toggle', showOrHide === 'show' ? 'hide' : 'show');
   }));
-}
+})();

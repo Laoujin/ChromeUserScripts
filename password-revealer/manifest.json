@@ -1,16 +1,27 @@
 {
     "manifest_version": 2,
-    "content_scripts": [{
-        "exclude_globs":    [],
-        "include_globs":    ["*"],
-        "js":               ["password-revealer.user.js"],
-        "matches":          ["http://*/*", "file:///*", "https://*/*"],
-        "run_at": "document_end"
-    }],
-    "converted_from_user_script": true,
-    "description":  "Show password entered in password inputs",
-    "name":         "Password Revealer",
-    "version":      "1",
+    "name": "Password Revealer",
+    "description": "Show password entered in password inputs",
+    "version": "1",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "browser_action": {
+        "default_title": "Password Revealer"
+    },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Alt+P",
+          "windows": "Alt+P",
+          "mac": "Alt+P",
+          "linux": "Alt+P"
+        }
+      }
+    },
+    "permissions": ["tabs", "http://*/*", "https://*/*", "file:///*"],
     "icons": {
         "128": "favicon.png"
     }
