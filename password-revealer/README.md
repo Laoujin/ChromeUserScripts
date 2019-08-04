@@ -8,6 +8,11 @@ Activate this script clicking the <img src="https://github.com/Laoujin/ChromeUse
 
 Default shortcut: `Alt + P` ([configurable](chrome://extensions/shortcuts)).
 
+## How it looks
+
+![How it looks](marketing-example.png)
+
+
 ## Content-Script Shortcut
 
 Some shortcuts cannot be configured as a Chrome extension shortcut
