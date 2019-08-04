@@ -19,8 +19,13 @@
 
   const passwordInputs = document.querySelectorAll("input[type=password]");
   passwordInputs.forEach(function(input) {
+    if (input.getAttribute('data-has-button')) {
+      return;
+    }
     const inputHeight = input.offsetHeight;
     const config = buttonConfig.show;
+
+    input.setAttribute('data-has-button', '1');
 
     input.insertAdjacentHTML('afterend', `
       <button type="button" class="show-pwd-button" data-toggle="hide">
