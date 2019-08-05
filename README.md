@@ -5,11 +5,25 @@ Chrome UserScripts
 stores the scripts in a Sqlite database. Not very source-controlly. Hence this repository.
 
 
+## The Scripts
+
+- [IMDB Piratebay link](https://github.com/Laoujin/ChromeUserScripts/tree/master/imdb-piratebay): Add a download button on IMDB.
+- [Password Revealer](https://github.com/Laoujin/ChromeUserScripts/tree/master/password-revealer): Add show/hide button next to each password input.
+
 ## Install them
 
 Turn on "Developer mode" and use `Load unpacked`:  
+```txt
+chrome://extensions
 ```
-chrome://extensions/
+
+## Configure them
+
+At `chrome://extensions`, click `Details` and then `Extension options`.
+
+Configure extension shortcuts:  
+```txt
+chrome://extensions/shortcuts
 ```
 
 ## Suppress Startup Warning
@@ -45,7 +59,7 @@ All scripts are vanilla JS and jQuery scripts but could switch to
 
 Chrome stores the extensions here:  
 (Changes made here are ignored/overwritten)  
-```
+```txt
 Windows Vista/7/8:
   Chrome  : %LocalAppData%\Google\Chrome\User Data\Default\Extensions\
   Chromium: %LocalAppData%\Chromium\User Data\Default\Extensions\
