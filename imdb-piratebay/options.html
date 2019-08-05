@@ -1,0 +1,62 @@
+<h1>Piratebay Url</h1>
+
+<input type="text" id="piratebayUrl" style="width: 70%" />
+<button id="save" style="display: inline">Save</button>
+<span id="status"></span>
+
+
+<h2>Some known urls</h2>
+<ul id="example-urls"></ul>
+
+<script>
+  const defaultPiratebayUrl = ''; // the default is in imdb-piratebay.user.js
+  const otherPirates = [
+    'https://pirateproxy.lat',
+    'https://mypirate.org',
+    'https://thepiratebay.icu',
+    'https://piratebay.tech',
+    'https://thepirate.fun',
+    'https://thepirate.host',
+    'https://thepiratebay.press',
+    'https://thepiratebay10.org',
+    'https://thehiddenbay.com',
+    'https://tpb.party',
+    'https://pirateproxy.bet',
+  ];
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Load settings
+    const input = document.getElementById('piratebayUrl');
+    chrome.storage.sync.get({ piratebayUrl: defaultPiratebayUrl }, function(items) {
+      input.value = items.piratebayUrl;
+    });
+
+    // Set known urls
+    const ul = document.getElementById('example-urls');
+    const links = otherPirates.map(p => `<li><a href="#">${p}</li>`)
+    ul.innerHTML = links.join('');
+
+    ul.addEventListener('click', function(event) {
+      if (event.target.nodeName !== 'A') {
+        return;
+      }
+
+      input.value = event.target.innerHTML;
+      event.preventDefault();
+      save_settings();
+    })
+  });
+
+  function save_settings() {
+    // Save settings
+    const input = document.getElementById('piratebayUrl');
+    chrome.storage.sync.set({ piratebayUrl: input.value }, function () {
+      const status = document.getElementById('status');
+      status.textContent = 'Saved.';
+      setTimeout(function () { status.textContent = ''; }, 750);
+    });
+  }
+
+  document.getElementById('save').addEventListener('click', save_settings);
+</script>

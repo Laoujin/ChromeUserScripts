@@ -1,6 +1,11 @@
 IMDB-piratebay
 ==============
 
-Add piratebay download link to imdb:
+Add Piratebay download link to IMDB:
 
 ![Oh my, is that even legal](imdb-piratebay.png)
+
+
+## Configuration
+
+![Piratebay url configuration](options.png)

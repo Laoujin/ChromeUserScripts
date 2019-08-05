@@ -1,14 +1,22 @@
 {
-    "manifest_version": 2,
-    "content_scripts": [{
-        "exclude_globs":    [],
-        "include_globs":    ["*"],
-        "js":               ["imdb-piratebay.user.js"],
-        "matches":          ["https://www.imdb.com/*"],
-        "run_at": "document_end"
-    }],
-    "converted_from_user_script": true,
-    "description":  "Put piratebay link on imdb",
-    "name":         "IMDB: Piratebay link",
-    "version":      "1.1"
+  "name": "IMDB: Piratebay link",
+  "description":"Add Piratebay download button on IMDB",
+  "version": "1.2",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "exclude_globs": [],
+    "include_globs": ["*"],
+    "js": ["imdb-piratebay.user.js"],
+    "matches": ["https://www.imdb.com/*"],
+    "run_at": "document_end"
+  }],
+  "converted_from_user_script": true,
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "48": "favicon.png"
+  }
 }
