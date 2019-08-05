@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Password Revealer",
     "description": "Show password entered in password inputs",
-    "version": "1",
+    "version": "1.1",
     "background": {
         "scripts": [
             "background.js"
