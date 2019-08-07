@@ -17,7 +17,8 @@ chrome.runtime.sendMessage({ type: 'requestUrl' }, function (response) {
 
 
 function getMovieTitle() {
-  const title = $('h1');
+  const title = document.getElementsByTagName('h1');
+  console.log('title', title);
   if (title.length !== 1) {
     console.log('Title box changed?');
   }
@@ -25,18 +26,21 @@ function getMovieTitle() {
     return;
   }
 
-  const fullTitle = title.text().trim();
+  const fullTitle = title[0].innerText.trim();
   const movieTitle = fullTitle.indexOf('(') !== -1 ? fullTitle.substring(0, fullTitle.length - 7) : fullTitle;
   return movieTitle;
 }
 
 
 function addDownloadButton() {
-  var widget = $('#star-rating-widget');
+  var widget = document.getElementById('star-rating-widget');
   // console.log('hehe', widget);
+  if (!widget) {
+    return false;
+  }
 
   const boxStyle = 'height: 42px; position: absolute; right: 190px; top: 9px; width: 100px';
-  widget.after(`
+  widget.insertAdjacentHTML('afterend', `
     <div style="${boxStyle}">
       <span class="btn2_wrapper" id="piratebay-download">
         <a class="rec_next btn2 medium btn2_text_on" title="Looks nice, take me to the bay!">
@@ -45,18 +49,20 @@ function addDownloadButton() {
       </span>
     </div>
   `);
-  return widget;
+
+  return true;
 }
 
 
 
-const widget = addDownloadButton();
-$('#piratebay-download', widget.parent()).on('click', function() {
-  const pirateUrl = piratebayUrl.replace(/\/*$/, '') + '/search/{searchTerm}/0/99/0';
-  const movieTitle = getMovieTitle().replace(/[^0-9a-zA-Z ]+/, '');
-  const searchTerm = encodeURI(movieTitle);
-  const url = pirateUrl.replace('{searchTerm}', searchTerm);
+if (addDownloadButton()) {
+  document.getElementById('piratebay-download').addEventListener('click', function() {
+    const pirateUrl = piratebayUrl.replace(/\/*$/, '') + '/search/{searchTerm}/0/99/0';
+    const movieTitle = getMovieTitle().replace(/[^0-9a-zA-Z ]+/, '');
+    const searchTerm = encodeURI(movieTitle);
+    const url = pirateUrl.replace('{searchTerm}', searchTerm);
 
-  console.log('getting', url);
-  window.open(url);
-});
+    console.log('getting', url);
+    window.open(url);
+  });
+}

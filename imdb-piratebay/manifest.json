@@ -7,7 +7,7 @@
     {
       "exclude_globs": [],
       "include_globs": ["*"],
-      "js": ["jquery-3.4.1.min.js", "imdb-piratebay.user.js"],
+      "js": ["imdb-piratebay.user.js"],
       "matches": ["https://www.imdb.com/*"],
       "run_at": "document_end"
     }
