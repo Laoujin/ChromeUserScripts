@@ -55,6 +55,8 @@
       const status = document.getElementById('status');
       status.textContent = 'Saved.';
       setTimeout(function () { status.textContent = ''; }, 750);
+
+      chrome.runtime.sendMessage('eclmjjegilohajalkpdlepefflpkokpg', { piratebayUrl: input.value });
     });
   }
 
