@@ -56,7 +56,7 @@
       status.textContent = 'Saved.';
       setTimeout(function () { status.textContent = ''; }, 750);
 
-      chrome.runtime.sendMessage('eclmjjegilohajalkpdlepefflpkokpg', { piratebayUrl: input.value });
+      chrome.runtime.sendMessage({ piratebayUrl: input.value });
     });
   }
 

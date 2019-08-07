@@ -12,19 +12,11 @@ chrome.storage.sync.get({ piratebayUrl }, function (items) {
 
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
-    // TODO: Also listen to option changes to update piratebayUrl
-
-    console.log(sender.tab ?
-      "from a content script:" + sender.tab.url :
-      "from the extension");
-
     if (request.piratebayUrl) {
       piratebayUrl = request.piratebayUrl;
       console.log('BG: piratebayUrl from sets update', piratebayUrl);
-    }
 
-    if (request.greeting == "hello") {
-      console.log('BG: Sending', piratebayUrl);
+    } else if (request.type === 'requestUrl') {
       sendResponse(piratebayUrl);
     }
   });
