@@ -1,8 +1,6 @@
 IMDB-Piratebay Link
 ===================
 
-![Fancy logo](favicon.png)
-
 Add Piratebay download link to IMDB:
 
 ![Oh my, is that even legal](imdb-piratebay.png)
