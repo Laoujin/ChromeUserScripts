@@ -8,4 +8,6 @@ Add Piratebay download link to IMDB:
 
 ## Configuration
 
+Click the IMDB-Piratebay icon right of the address bar to configure the Piratebay Url:
+
 ![Piratebay url configuration](options.png)
