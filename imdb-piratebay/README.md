@@ -1,7 +1,5 @@
-
- 
-IMDB-piratebay
-==============
+IMDB-Piratebay Link
+===================
 
 ![Fancy logo](favicon.png)
 
