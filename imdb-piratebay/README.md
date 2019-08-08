@@ -1,5 +1,9 @@
+
+ 
 IMDB-piratebay
 ==============
+
+![Fancy logo](favicon.png)
 
 Add Piratebay download link to IMDB:
 
