@@ -9,7 +9,7 @@
 /* eslint no-console: 0 */
 
 (function() {
-  var searchBox = document.getElementById('navbar-query');
+  var searchBox = document.getElementById('suggestion-search');
 
   if (!searchBox) {
     console.log('UserScript: Searchbox focus no longer working');
