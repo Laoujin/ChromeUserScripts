@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"content_scripts": [{
+		"exclude_globs": [],
+		"include_globs": ["*"],
+		"js": ["swagger.user.js"],
+		"matches": ["http://localhost:19081/*"],
+		"run_at": "document_end"
+	}],
+	"converted_from_user_script": true,
+	"description": "Add",
+	"name": "Swagger Enhancements",
+	"short_name": "SwaggerEnhance",
+	"version": "1",
+	"icons": {
+		"128": "favicon.png"
+	}
+}
